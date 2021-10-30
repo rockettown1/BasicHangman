@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/basichangman/static/css/main.2a7e377e.chunk.css",
+    "main.js": "/basichangman/static/js/main.c485c5c9.chunk.js",
+    "main.js.map": "/basichangman/static/js/main.c485c5c9.chunk.js.map",
+    "runtime-main.js": "/basichangman/static/js/runtime-main.cbadd130.js",
+    "runtime-main.js.map": "/basichangman/static/js/runtime-main.cbadd130.js.map",
+    "static/js/2.3f21b51c.chunk.js": "/basichangman/static/js/2.3f21b51c.chunk.js",
+    "static/js/2.3f21b51c.chunk.js.map": "/basichangman/static/js/2.3f21b51c.chunk.js.map",
+    "index.html": "/basichangman/index.html",
+    "static/css/main.2a7e377e.chunk.css.map": "/basichangman/static/css/main.2a7e377e.chunk.css.map",
+    "static/js/2.3f21b51c.chunk.js.LICENSE.txt": "/basichangman/static/js/2.3f21b51c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cbadd130.js",
+    "static/js/2.3f21b51c.chunk.js",
+    "static/css/main.2a7e377e.chunk.css",
+    "static/js/main.c485c5c9.chunk.js"
+  ]
+}
