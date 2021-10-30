@@ -79,6 +79,10 @@ const Container = styled.div`
     stroke-width: 4px;
     stroke-linecap: round;
   }
+  @media screen and (max-width: 750px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 const Head = styled.circle``;
 

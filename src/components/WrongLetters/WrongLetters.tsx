@@ -43,6 +43,11 @@ const Container = styled.div`
   span {
     font-size: 24px;
   }
+  @media screen and (max-width: 750px) {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
 `;
 
 const Letters = styled.div``;

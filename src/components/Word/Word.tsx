@@ -37,4 +37,9 @@ const Container = styled.div`
     height: 50px;
     width: 20px;
   }
+  @media screen and (max-width: 750px) {
+    position: relative;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
 `;

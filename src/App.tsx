@@ -58,8 +58,8 @@ function App() {
       <Header />
       <GameContainer>
         <Figure wrongLetters={wrongLetters} />
-        <WrongLetters wrongLetters={wrongLetters} />
         <Word selectedWord={selectedWord} correctLetters={correctLetters} />
+        <WrongLetters wrongLetters={wrongLetters} />
       </GameContainer>
       <Popup
         correctLetters={correctLetters}
@@ -89,4 +89,8 @@ const GameContainer = styled.div`
   position: relative;
   height: 450px;
   width: 650px;
+  @media screen and (max-width: 750px) {
+    width: 100vw;
+    height: auto;
+  }
 `;
