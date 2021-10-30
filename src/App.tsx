@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import Header from "./components/Header/Header";
 import Figure from "./components/Figure/Figure";
@@ -8,17 +8,22 @@ import Notification from "./components/Notification/Notification";
 import Popup from "./components/Popup/Popup";
 import { showNotification as show } from "./helpers/helpers";
 import randomWords from "random-words";
+import { useWindowSize } from "./hooks/useWindowSize";
 
 let selectedWord = randomWords();
 
 function App() {
+  const inputRef = useRef<HTMLInputElement>(null);
   const [playable, setPlayable] = useState<boolean>(true);
   const [correctLetters, setCorrectLetters] = useState<string[]>([]);
   const [wrongLetters, setWrongLetters] = useState<string[]>([]);
   const [showNotification, setShowNotification] = useState<boolean>(false);
+  const { width } = useWindowSize();
 
   useEffect(() => {
-    const handleKeyup = (event: KeyboardEvent) => {
+    inputRef.current?.focus();
+
+    const handleKeyup = (event: any) => {
       //comeback to this and change logic to replace deprecated keyCode property
       const { key, keyCode } = event;
 
@@ -41,10 +46,16 @@ function App() {
       }
     };
 
-    window.addEventListener("keyup", handleKeyup);
+    //event on hidden input to mobile keyboard always open
+    inputRef.current!.addEventListener("keyup", handleKeyup);
 
-    return () => window.removeEventListener("keyup", handleKeyup);
-  }, [correctLetters, wrongLetters, playable]);
+    //focus trap
+    window.addEventListener("click", () => {
+      inputRef.current?.focus();
+    });
+
+    return () => inputRef.current!.removeEventListener("keyup", handleKeyup);
+  }, [correctLetters, wrongLetters, playable, width]);
 
   const playAgain = () => {
     setPlayable(true);
@@ -69,6 +80,7 @@ function App() {
         playAgain={playAgain}
       />
       <Notification showNotification={showNotification} />
+      <HiddenInput type="text" ref={inputRef} />
     </Container>
   );
 }
@@ -93,4 +105,12 @@ const GameContainer = styled.div`
     width: 100vw;
     height: auto;
   }
+`;
+
+const HiddenInput = styled.input`
+  position: absolute;
+  font-size: 20px;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
 `;
