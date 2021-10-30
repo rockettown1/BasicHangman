@@ -68,6 +68,7 @@ function App() {
     <Container>
       <Header />
       <GameContainer>
+        <HiddenInput type="text" ref={inputRef} />
         <Figure wrongLetters={wrongLetters} />
         <Word selectedWord={selectedWord} correctLetters={correctLetters} />
         <WrongLetters wrongLetters={wrongLetters} />
@@ -80,7 +81,6 @@ function App() {
         playAgain={playAgain}
       />
       <Notification showNotification={showNotification} />
-      <HiddenInput type="text" ref={inputRef} />
     </Container>
   );
 }
@@ -108,9 +108,6 @@ const GameContainer = styled.div`
 `;
 
 const HiddenInput = styled.input`
-  position: absolute;
   font-size: 20px;
-  top: 0;
-  left: 0;
   opacity: 0;
 `;
