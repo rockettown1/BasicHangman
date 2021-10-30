@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     inputRef.current?.focus();
 
-    const handleKeyup = (event: any) => {
+    const handleKeyup = (event: KeyboardEvent) => {
       //comeback to this and change logic to replace deprecated keyCode property
       const { key, keyCode } = event;
 
@@ -68,9 +68,9 @@ function App() {
     <Container>
       <Header />
       <GameContainer>
-        <HiddenInput type="text" ref={inputRef} />
         <Figure wrongLetters={wrongLetters} />
         <Word selectedWord={selectedWord} correctLetters={correctLetters} />
+        <HiddenInput type="text" ref={inputRef} />
         <WrongLetters wrongLetters={wrongLetters} />
       </GameContainer>
       <Popup
