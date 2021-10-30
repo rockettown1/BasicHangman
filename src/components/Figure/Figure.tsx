@@ -5,8 +5,8 @@ const Figure = ({ wrongLetters }: WrongLettersProps) => {
   const err = wrongLetters.length;
 
   return (
-    <Container>
-      <svg className="figure-container">
+    <Container data-testid="stickman">
+      <svg>
         {/* Rod */}
         <line x1="60" y1="20" x2="140" y2="20" data-testid="stick" />
         <line x1="140" y1="20" x2="140" y2="50" data-testid="stick" />

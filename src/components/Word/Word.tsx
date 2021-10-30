@@ -7,7 +7,7 @@ interface WordProps {
 
 const Word = ({ selectedWord, correctLetters }: WordProps) => {
   return (
-    <Container>
+    <Container data-testid="word">
       {selectedWord.split("").map((letter, index) => {
         return (
           <span data-testid="letter" key={index}>

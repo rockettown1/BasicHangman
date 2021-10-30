@@ -6,7 +6,7 @@ export interface WrongLettersProps {
 
 const WrongLetters = ({ wrongLetters }: WrongLettersProps) => {
   return (
-    <Container>
+    <Container data-testid="wrongbox">
       <Letters>
         <p>Wrong Letters</p>
         {wrongLetters
