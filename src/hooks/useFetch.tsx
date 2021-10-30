@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+//this extremely basic caching strategy assumes url enpoints return static data.
+//for anything more than a simple api a more appropriate caching strategy should be used.
 const cache: { [k: string]: [] } = {};
 
 export const useFetch = (url: string) => {
