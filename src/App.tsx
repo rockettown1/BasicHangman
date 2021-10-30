@@ -46,7 +46,7 @@ function App() {
       }
     };
 
-    //event on hidden input to mobile keyboard always open
+    //event on hidden input so mobile keyboard always open
     inputRef.current!.addEventListener("keyup", handleKeyup);
 
     //focus trap
@@ -112,5 +112,5 @@ const HiddenInput = styled.input`
   font-size: 20px;
   top: 0;
   left: 0;
-  opacity: 0.1;
+  opacity: 0;
 `;
