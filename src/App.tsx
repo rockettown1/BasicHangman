@@ -109,5 +109,13 @@ const GameContainer = styled.div`
 
 const HiddenInput = styled.input`
   font-size: 20px;
+  position: absolute;
+  height: 20px;
+  width: 5px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
   opacity: 0;
 `;

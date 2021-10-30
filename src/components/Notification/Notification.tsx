@@ -29,4 +29,11 @@ const Container = styled.div<ContainerProps>`
   p {
     margin: 0;
   }
+  @media screen and (max-width: 750px) {
+    background-color: rgba(0, 0, 0, 1);
+    bottom: unset;
+    border-radius: 0 0 10px 10px;
+    top: -55px;
+    transform: ${({ show }) => (show ? "translateY(50px)" : "translateY(0px)")};
+  }
 `;
